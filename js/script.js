@@ -136,6 +136,15 @@ document.querySelector('.close_walls').addEventListener('click',()=>{
       });
 
 
+      //Delete All Data of The User From Localstorage And Start the User Setup From Intitally
+
+      document.querySelector('.bin').addEventListener('click',()=>{
+            localStorage.clear();
+            alert("User Data Deleted! Setup a New user!");
+            window.location.href="welcome.html";
+      })
+
+
 
 
       //Show a Welcome Screen to The User who Comes To Homepage for First Time To Get Name
@@ -198,7 +207,7 @@ document.querySelector('.next').addEventListener('click',()=>{
 
  /*Weather Funtion start from here*/
  function getWeather(city) {
-      var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=16020d8d307b65395a579b8cdb9b33dd&units=metric";
+      var url = "http://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem('city') + "&APPID=16020d8d307b65395a579b8cdb9b33dd&units=metric";
   
   
       $.ajax({
@@ -226,7 +235,7 @@ document.querySelector('.next').addEventListener('click',()=>{
           console.log(desc);
           //$('#temp').html(temp);
           //$('#city').html(city);
-          document.querySelector('.city').innerHTML=city;
+          document.querySelector('.city').innerHTML=localStorage.getItem('city');
           document.querySelector('.temp').innerHTML=temp+`<sup>o</sup>C`;
           document.querySelector('.icons').setAttribute('src',`http://openweathermap.org/img/wn/${icon}@2x.png`);
           //$('#temp_info').html(desc + '<br>Minimum:' + temp_min + '<br>Maximum:' + temp_max);
@@ -249,9 +258,10 @@ document.querySelector('.next').addEventListener('click',()=>{
           if (statuscode == 400) {
             console.log('There is an error city not found!');
           }
-          if (statuscode == 404) {
+          else if (statuscode == 404) {
             console.log('Bad Request!');
           }
+      
         }
       });
   
@@ -282,6 +292,7 @@ document.querySelector('.next').addEventListener('click',()=>{
  },error:function(e)
  {
 console.log('Error while fetching city!');
+getWeather(localStorage.getItem('city'));
  }
  });
  }

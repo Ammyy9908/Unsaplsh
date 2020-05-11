@@ -50,6 +50,20 @@
       border-radius: 65px;   
 }
 
+.bin
+{
+      width: 45px;
+      height: 45px;
+      background-color:#fff;
+      margin: 10px 15px;
+      border-radius: 65px;   
+}
+
+.tool
+{
+      margin: 15px;    
+}
+
 .google
 {
       margin: 15px;
@@ -89,6 +103,14 @@
       height: 380px;
       background-size: cover;
 }
+
+.preview1
+{
+      height: 380px;
+      width: 400px;
+      background-image: url(../img/fallback.jpg);
+      background-size: cover;
+}
 .weather
 {
       width: 200px;
@@ -109,9 +131,9 @@ position: absolute;
 
 .uname input[type="text"]
 {
-      width: 45%;
+      width: 35%;
       height: 45px;
-      border-bottom: 2px solid #ffffff;
+      border-bottom: 1px solid #ffffff;
       border-top:0px;
       border-right: 0px;
       border-left: 0px;
@@ -119,7 +141,20 @@ position: absolute;
       outline:none;
       padding-left: 15px;
       font-size: 30px;
-      font-weight: 200;
+      font-weight: 100;
       color: #ffffff;
       text-align: center;
+}
+
+.welcome
+{
+      background-image: url('../img/fallback.jpg');
+      background-size: cover;
+}
+.next
+{
+      border: none;
+      background-color: transparent;
+      color: #ffffff;
+      border-radius: 65px;
 }
