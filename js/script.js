@@ -207,7 +207,7 @@ document.querySelector('.next').addEventListener('click',()=>{
 
  /*Weather Funtion start from here*/
  function getWeather(city) {
-      var url = "http://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem('city') + "&APPID=16020d8d307b65395a579b8cdb9b33dd&units=metric";
+      var url = "https://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem('city') + "&APPID=16020d8d307b65395a579b8cdb9b33dd&units=metric";
   
   
       $.ajax({
